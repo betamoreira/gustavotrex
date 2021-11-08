@@ -2,6 +2,7 @@
 var solo2;
 var trex, trex_correndo, edges;
 var solo, imagen_do_solo;
+
 function preload(){
 
   trex_correndo = loadAnimation("trex1.png", "trex3.png", "trex4.png");
@@ -24,20 +25,14 @@ function setup(){
   solo2 = createSprite(300,190,600,10);
   solo2.visible = false;
 
+  var rand = Math.round(random(10,60));
 
 }
 
 function draw(){
- //s console.time();
   background(220);
 
-
-//console.log( frameCount);
-  
-//console.info("isso e uma informaçao");
- // console.error("404 error");
-  //console.warn("aviso jogo crashou");
-  //console.log(trex.y);
+  console.log(frameCount);
 
   if(keyDown("space") && trex.y >160){
     trex.velocityY = -12;
@@ -50,6 +45,13 @@ function draw(){
 
   trex.collide(solo2);
 
+  gerarNuvens();
+
   drawSprites();
-//console.timeEnd();
+}
+
+function gerarNuvens(){
+  //código para gerar as nuvens
+
+
 }
